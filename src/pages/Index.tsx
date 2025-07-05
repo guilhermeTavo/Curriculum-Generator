@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -15,6 +14,7 @@ import { ThemeToggle } from '@/components/resume/ThemeToggle';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useTheme } from '@/hooks/useTheme';
+import { Footer } from '@/components/Footer';
 
 export interface ResumeData {
   personalInfo: {
@@ -106,7 +106,7 @@ const Index = () => {
   const CurrentStepComponent = steps[currentStep - 1].component;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="border-b border-border bg-card">
         <div className="container mx-auto px-4 py-4">
@@ -125,7 +125,7 @@ const Index = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 max-w-4xl flex-1">
         {/* Progress */}
         <div className="mb-8">
           <Progress value={progress} className="h-2 mb-4" />
@@ -188,6 +188,8 @@ const Index = () => {
           </Card>
         </FormProvider>
       </div>
+
+      <Footer />
     </div>
   );
 };
