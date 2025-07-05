@@ -50,6 +50,12 @@ const translations = {
     next: "Next",
     generate_pdf: "Generate PDF",
     remove: "Remove",
+    company_placeholder: "Enter company name",
+    job_title_placeholder: "Enter job title",
+    description_placeholder: "Describe your responsibilities and achievements",
+    school_placeholder: "Enter school or university name",
+    degree_placeholder: "Enter degree or certification",
+    language_placeholder: "Enter language name",
     fill_required_fields: "Please fill in all required fields"
   },
   'pt-br': {
@@ -100,6 +106,12 @@ const translations = {
     next: "Próximo",
     generate_pdf: "Gerar PDF",
     remove: "Remover",
+    company_placeholder: "Digite o nome da empresa",
+    job_title_placeholder: "Digite o título do cargo",
+    description_placeholder: "Descreva suas responsabilidades e conquistas",
+    school_placeholder: "Digite o nome da escola ou universidade",
+    degree_placeholder: "Digite a graduação ou certificação",
+    language_placeholder: "Digite o nome do idioma",
     fill_required_fields: "Por favor, preencha todos os campos obrigatórios"
   },
   es: {
@@ -150,6 +162,12 @@ const translations = {
     next: "Siguiente",
     generate_pdf: "Generar PDF",
     remove: "Eliminar",
+    company_placeholder: "Ingrese el nombre de la empresa",
+    job_title_placeholder: "Ingrese el título del trabajo",
+    description_placeholder: "Describa sus responsabilidades y logros",
+    school_placeholder: "Ingrese el nombre de la escuela o universidad",
+    degree_placeholder: "Ingrese el título o certificación",
+    language_placeholder: "Ingrese el nombre del idioma",
     fill_required_fields: "Por favor complete todos los campos obligatorios"
   },
   fr: {
@@ -200,6 +218,12 @@ const translations = {
     next: "Suivant",
     generate_pdf: "Générer PDF",
     remove: "Supprimer",
+    company_placeholder: "Entrez le nom de l'entreprise",
+    job_title_placeholder: "Entrez le titre du poste",
+    description_placeholder: "Décrivez vos responsabilités et réalisations",
+    school_placeholder: "Entrez le nom de l'école ou université",
+    degree_placeholder: "Entrez le diplôme ou certification",
+    language_placeholder: "Entrez le nom de la langue",
     fill_required_fields: "Veuillez remplir tous les champs obligatoires"
   },
   ru: {
@@ -250,6 +274,12 @@ const translations = {
     next: "Следующий",
     generate_pdf: "Создать PDF",
     remove: "Удалить",
+    company_placeholder: "Введите название компании",
+    job_title_placeholder: "Введите название должности",
+    description_placeholder: "Опишите свои обязанности и достижения",
+    school_placeholder: "Введите название школы или университета",
+    degree_placeholder: "Введите степень или сертификацию",
+    language_placeholder: "Введите название языка",
     fill_required_fields: "Пожалуйста, заполните все обязательные поля"
   }
 };
