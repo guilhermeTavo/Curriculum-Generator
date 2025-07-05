@@ -97,6 +97,12 @@ const Index = () => {
     }
   };
 
+  const goToStep = (stepNumber: number) => {
+    if (stepNumber >= 1 && stepNumber <= totalSteps) {
+      setCurrentStep(stepNumber);
+    }
+  };
+
   const CurrentStepComponent = steps[currentStep - 1].component;
 
   return (
@@ -127,14 +133,15 @@ const Index = () => {
             {steps.map(step => (
               <div 
                 key={step.number}
-                className={`flex flex-col items-center ${
+                className={`flex flex-col items-center cursor-pointer transition-colors hover:text-primary ${
                   currentStep >= step.number ? 'text-primary font-semibold' : 'text-muted-foreground'
                 }`}
+                onClick={() => goToStep(step.number)}
               >
-                <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center mb-2 ${
+                <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center mb-2 transition-colors ${
                   currentStep >= step.number 
                     ? 'bg-primary border-primary text-primary-foreground' 
-                    : 'border-muted-foreground'
+                    : 'border-muted-foreground hover:border-primary'
                 }`}>
                   {step.number}
                 </div>

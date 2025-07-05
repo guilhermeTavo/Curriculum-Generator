@@ -20,15 +20,110 @@ export const PreviewStep = ({ selectedTemplate, onTemplateChange }: PreviewStepP
   const { translations } = useLanguage();
   const formData = watch();
 
-  const generatePDF = () => {
-    // Aqui implementaremos a geração de PDF
-    const printContent = document.getElementById('resume-preview');
-    if (printContent) {
-      const originalContent = document.body.innerHTML;
-      document.body.innerHTML = printContent.innerHTML;
-      window.print();
-      document.body.innerHTML = originalContent;
-      window.location.reload();
+  const generatePDF = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    try {
+      const printContent = document.getElementById('resume-preview');
+      if (printContent) {
+        // Criar uma nova janela para impressão
+        const printWindow = window.open('', '_blank');
+        if (printWindow) {
+          printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+              <head>
+                <title>Resume</title>
+                <style>
+                  body { 
+                    font-family: Arial, sans-serif; 
+                    margin: 0; 
+                    padding: 20px; 
+                    background: white;
+                    color: black;
+                  }
+                  .resume-preview-content { 
+                    max-width: 800px; 
+                    margin: 0 auto; 
+                  }
+                  .resume-header { 
+                    margin-bottom: 20px; 
+                    text-align: center; 
+                  }
+                  .resume-header h1 { 
+                    margin: 0; 
+                    font-size: 32px; 
+                    color: #2563eb; 
+                  }
+                  .resume-header h2 { 
+                    margin: 5px 0 15px 0; 
+                    font-size: 20px; 
+                    color: #64748b; 
+                  }
+                  .contact-info { 
+                    display: flex; 
+                    justify-content: center; 
+                    gap: 20px; 
+                    flex-wrap: wrap; 
+                  }
+                  .resume-section { 
+                    margin-bottom: 25px; 
+                  }
+                  .resume-section h3 { 
+                    border-bottom: 2px solid #2563eb; 
+                    padding-bottom: 5px; 
+                    margin-bottom: 15px; 
+                    color: #2563eb; 
+                  }
+                  .skills-list { 
+                    display: flex; 
+                    flex-wrap: wrap; 
+                    gap: 10px; 
+                  }
+                  .skill-item { 
+                    background: #f1f5f9; 
+                    padding: 5px 12px; 
+                    border-radius: 15px; 
+                    font-size: 14px; 
+                  }
+                  .experience-item, .education-item { 
+                    margin-bottom: 15px; 
+                  }
+                  .experience-item h4, .education-item h4 { 
+                    margin: 0 0 5px 0; 
+                    color: #1e293b; 
+                  }
+                  .date-range { 
+                    color: #64748b; 
+                    font-style: italic; 
+                    margin-bottom: 8px; 
+                  }
+                  @media print {
+                    body { 
+                      margin: 0; 
+                      padding: 0; 
+                    }
+                  }
+                </style>
+              </head>
+              <body>
+                ${printContent.innerHTML}
+              </body>
+            </html>
+          `);
+          printWindow.document.close();
+          
+          // Aguardar um pouco para garantir que o conteúdo foi carregado
+          setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+          }, 500);
+        }
+      }
+    } catch (error) {
+      console.error('Erro ao gerar PDF:', error);
+      alert('Erro ao gerar PDF. Tente novamente.');
     }
   };
 
