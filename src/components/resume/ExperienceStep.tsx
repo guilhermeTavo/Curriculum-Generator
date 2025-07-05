@@ -55,7 +55,7 @@ export const ExperienceStep = () => {
                   <FormItem>
                     <FormLabel>{translations.company_name}</FormLabel>
                     <FormControl>
-                      <Input placeholder={translations.company_name} {...field} />
+                      <Input placeholder={translations.company_placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -69,7 +69,7 @@ export const ExperienceStep = () => {
                   <FormItem>
                     <FormLabel>{translations.job_title}</FormLabel>
                     <FormControl>
-                      <Input placeholder={translations.job_title} {...field} />
+                      <Input placeholder={translations.job_title_placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -133,7 +133,7 @@ export const ExperienceStep = () => {
                   <FormLabel>{translations.job_description}</FormLabel>
                   <FormControl>
                     <Textarea 
-                      placeholder={translations.job_description}
+                      placeholder={translations.description_placeholder}
                       className="min-h-[100px]"
                       {...field} 
                     />

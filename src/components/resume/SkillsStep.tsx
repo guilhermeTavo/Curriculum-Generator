@@ -85,7 +85,7 @@ export const SkillsStep = () => {
                   <FormItem className="flex-1">
                     <FormLabel>{translations.languages_spoken}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ex: English" {...field} />
+                      <Input placeholder={translations.language_placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

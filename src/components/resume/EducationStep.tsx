@@ -53,7 +53,7 @@ export const EducationStep = () => {
                   <FormItem>
                     <FormLabel>{translations.school_name}</FormLabel>
                     <FormControl>
-                      <Input placeholder={translations.school_name} {...field} />
+                      <Input placeholder={translations.school_placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -67,7 +67,7 @@ export const EducationStep = () => {
                   <FormItem>
                     <FormLabel>{translations.degree}</FormLabel>
                     <FormControl>
-                      <Input placeholder={translations.degree} {...field} />
+                      <Input placeholder={translations.degree_placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
