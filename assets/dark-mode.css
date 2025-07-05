@@ -1,0 +1,77 @@
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary-color: #94a3b8;
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-icon::before {
+    content: '☀️';
+}
+
+[data-theme="dark"] .header {
+    background-color: var(--surface-color);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .main-content {
+    background-color: var(--surface-color);
+}
+
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="tel"],
+[data-theme="dark"] input[type="url"],
+[data-theme="dark"] input[type="month"],
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .experience-item,
+[data-theme="dark"] .education-item,
+[data-theme="dark"] .language-item {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .template-preview {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .template-option input[type="radio"]:checked + .template-preview {
+    background-color: rgb(59 130 246 / 0.1);
+}
+
+[data-theme="dark"] .resume-preview {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .language-selector,
+[data-theme="dark"] .theme-toggle {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Animations for theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
